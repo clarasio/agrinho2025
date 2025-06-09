@@ -1,0 +1,64 @@
+/* Importação de fonte do Google Fonts (se você quiser garantir que esteja disponível para esta folha também) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Definição das variáveis de cores (mantidas para referência, mas podem ser removidas se já estiverem no style.css e acessíveis globalmente) */
+:root {
+    --cor-muito-escura: #012E40; /* Azul marinho profundo */
+    --cor-escura: #024959;      /* Azul esverdeado escuro */
+    --cor-media: #026773;       /* Azul esverdeado médio */
+    --cor-clara: #3CA6A6;       /* Verde-água/ciano claro */
+    --cor-fundo-principal: #F2E3D5; /* Bege/off-white para o fundo da página */
+    --cor-texto-padrao: var(--cor-muito-escura); /* Cor padrão do texto para contraste */
+    --cor-texto-claro: #ffffff; /* Texto branco para fundos escuros */
+}
+
+/* Estilos específicos para as seções de conteúdo da página Energia Rural */
+
+/* Estilo para imagens dentro das seções da página de energia */
+.field-city-connection-img {
+    border: 3px solid var(--cor-clara);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.field-city-connection-img:hover {
+    transform: scale(1.02);
+}
+
+/* Estilo para destacar os títulos das sub-seções */
+.main h3 {
+    color: var(--cor-escura);
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Estilo para os parágrafos de destaque (lead) */
+.main .lead {
+    font-size: 1.25rem;
+    color: var(--cor-media);
+    font-weight: 400;
+}
+
+/* --- ALTERAÇÃO AQUI --- */
+/* Estilo para o background de alguma seção específica (opcional) */
+.section-highlight {
+    background-color: var(--cor-escura); /* Cor azul esverdeado escuro do cabeçalho */
+    padding: 2.5rem;
+    border-radius: 10px;
+    margin-bottom: 3rem;
+    color: var(--cor-texto-claro); /* Texto branco para contraste no fundo escuro */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.section-highlight h3 {
+    color: var(--cor-texto-claro); /* Garante que o título seja branco aqui */
+}
+
+/* Ajustes responsivos se necessário (exemplo) */
+@media (max-width: 768px) {
+    .field-city-connection-img {
+        margin-top: 1.5rem;
+    }
+}

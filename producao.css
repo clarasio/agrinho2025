@@ -1,0 +1,165 @@
+/* Importação de fonte do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Definição das variáveis de cores (apenas para referência, são globais em style.css) */
+:root {
+    --cor-muito-escura: #012E40; /* Azul marinho profundo */
+    --cor-escura: #024959;      /* Azul esverdeado escuro */
+    --cor-media: #026773;       /* Azul esverdeado médio */
+    --cor-clara: #3CA6A6;       /* Verde-água/ciano claro */
+    --cor-fundo-principal: #F2E3D5; /* Bege/off-white para o fundo da página */
+    --cor-texto-padrao: var(--cor-muito-escura); /* Cor padrão do texto para contraste */
+    --cor-texto-claro: #ffffff; /* Texto branco para fundos escuros */
+
+    /* Cores em RGB para uso com transparência (rgba) */
+    --cor-muito-escura-rgb: 1, 46, 64;
+    --cor-escura-rgb: 2, 73, 89;
+    --cor-media-rgb: 2, 103, 115;
+    --cor-clara-rgb: 60, 166, 166;
+}
+
+/* Estilos Gerais para a Página de Produção */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--cor-fundo-principal);
+    color: var(--cor-texto-padrao);
+}
+
+/* Seção dos Três Pilares/Quadrados */
+.pillars-section {
+    margin-top: 2rem; /* Espaçamento pequeno do cabeçalho */
+    margin-bottom: 4rem; /* Espaçamento para o conteúdo abaixo */
+}
+
+.pillar-card {
+    background-color: #ffffff; /* Fundo branco para cada 'quadradinho' */
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Sombra suave para o efeito 3D */
+    height: 100%; /* Garante que todos tenham a mesma altura */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(var(--cor-clara-rgb), 0.3); /* Borda muito sutil com a cor clara */
+}
+
+.pillar-card:hover {
+    transform: translateY(-5px); /* Efeito de elevação sutil no hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12); /* Sombra um pouco mais forte */
+}
+
+.pillar-icon {
+    width: 60px; /* Tamanho dos ícones */
+    height: 60px;
+    margin-bottom: 1rem;
+    background-color: var(--cor-media); /* Fundo com a cor média */
+    border-radius: 50%; /* Torna o ícone redondo */
+    padding: 8px; /* Espaçamento interno */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra para o ícone */
+}
+
+.pillar-title {
+    color: var(--cor-escura); /* Título de cada pilar */
+    font-weight: 600;
+    margin-bottom: 0.7rem;
+    font-size: 1.25rem;
+}
+
+.pillar-card p {
+    color: var(--cor-texto-padrao); /* Texto dentro do pilar */
+    line-height: 1.5;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+/* Título e Texto de Introdução Principal (sem fundo/bloco) */
+.page-intro-text {
+    padding: 1rem 0; /* Espaçamento apenas vertical */
+    margin-bottom: 4rem; /* Garante espaço para as seções fluidas */
+}
+
+.section-title {
+    color: var(--cor-escura); /* Título principal */
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.lead-text {
+    color: var(--cor-media); /* Texto introdutório */
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* Seções de Conteúdo Fluido (Texto e Imagem sem Retângulo) */
+.content-section-fluid {
+    margin-bottom: 4rem; /* Espaçamento entre as seções */
+    padding: 0 1rem; /* Pequeno padding horizontal para garantir alinhamento */
+}
+
+.content-heading {
+    color: var(--cor-muito-escura); /* Títulos destas seções */
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.content-section-fluid p {
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    color: var(--cor-texto-padrao);
+}
+
+.fluid-image {
+    max-width: 100%;
+    height: auto;
+    border: 3px solid var(--cor-clara); /* Borda com a cor clara */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra para a imagem */
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.fluid-image:hover {
+    transform: scale(1.01);
+    border-color: var(--cor-media); /* Muda a cor da borda no hover */
+}
+
+/* Inverte a ordem em telas maiores para algumas seções */
+.content-section-fluid.reverse-fluid-order {
+    flex-direction: row-reverse;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .pillars-section {
+        margin-top: 1.5rem;
+        margin-bottom: 2.5rem;
+    }
+    .pillar-card {
+        margin-bottom: 1.5rem; /* Espaçamento entre pilares em mobile */
+    }
+    .page-intro-text {
+        padding: 0 1rem; /* Adiciona padding em mobile */
+        margin-bottom: 2.5rem;
+    }
+    .content-section-fluid {
+        padding: 0 1rem;
+        margin-bottom: 2.5rem;
+    }
+    .content-section-fluid .col-md-5,
+    .content-section-fluid .col-md-7 {
+        margin-bottom: 1.5rem; /* Espaçamento entre imagem/texto em mobile */
+    }
+    /* Garante que a imagem venha antes do texto em mobile para todas as seções fluidas */
+    .content-section-fluid .col-md-5,
+    .content-section-fluid .col-md-7 {
+        order: initial !important; /* Reseta a ordem padrão do Bootstrap */
+    }
+    .content-section-fluid .col-md-5,
+    .content-section-fluid .col-md-7:not(:first-child) {
+        order: 1; /* Imagem primeiro, depois texto */
+    }
+    .content-section-fluid.reverse-fluid-order .col-md-5 {
+        order: 1; /* Mantém a imagem primeiro em ordem invertida também */
+    }
+}
